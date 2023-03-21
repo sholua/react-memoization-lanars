@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import './App.css';
 import ChildComponent from './components/ChildComponent';
 
@@ -7,6 +7,8 @@ function App() {
   const [childText, setChildText] = useState('Child component');
 
   console.log(`App rendered ${appRenderIndex}`);
+
+  const params = useMemo(() => ({ text: childText }), [childText]);
 
   return (
     <div className="App">
@@ -17,7 +19,7 @@ function App() {
         Change child text
       </button>
       <br />
-      <ChildComponent params={{ text: childText }} />
+      <ChildComponent params={params} />
     </div>
   );
 }
