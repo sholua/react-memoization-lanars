@@ -1,12 +1,12 @@
 import { FC, memo } from 'react';
 
 interface Props {
-  text: string;
+  params: { text: string };
 }
 
-const ChildComponent: FC<Props> = ({ text }) => {
+const ChildComponent: FC<Props> = ({ params }) => {
   console.log('Child re-rendered');
-  return <div>{text}</div>;
+  return <div>{params.text}</div>;
 };
 
 export default memo(ChildComponent);

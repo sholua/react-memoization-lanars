@@ -17,7 +17,7 @@ function App() {
         Change child text
       </button>
       <br />
-      <ChildComponent text={childText} />
+      <ChildComponent params={{ text: childText }} />
     </div>
   );
 }
