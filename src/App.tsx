@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import './App.css';
 import ChildComponent from './components/ChildComponent';
 
@@ -10,6 +10,8 @@ function App() {
 
   const params = useMemo(() => ({ text: childText }), [childText]);
 
+  const handleClick = useCallback(() => {}, []);
+
   return (
     <div className="App">
       <button onClick={() => setAppRenderIndex((prev) => prev + 1)}>
@@ -19,7 +21,7 @@ function App() {
         Change child text
       </button>
       <br />
-      <ChildComponent params={params} onClick={() => {}} />
+      <ChildComponent params={params} onClick={handleClick} />
     </div>
   );
 }
