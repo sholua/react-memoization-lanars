@@ -2,6 +2,7 @@ import { FC, memo } from 'react';
 
 interface Props {
   params: { text: string };
+  onClick: () => void;
 }
 
 const ChildComponent: FC<Props> = ({ params }) => {

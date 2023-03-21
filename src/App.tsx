@@ -19,7 +19,7 @@ function App() {
         Change child text
       </button>
       <br />
-      <ChildComponent params={params} />
+      <ChildComponent params={params} onClick={() => {}} />
     </div>
   );
 }
