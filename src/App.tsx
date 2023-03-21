@@ -4,6 +4,7 @@ import ChildComponent from './components/ChildComponent';
 
 function App() {
   const [appRenderIndex, setAppRenderIndex] = useState(0);
+  const [childText, setChildText] = useState('Child component');
 
   console.log(`App rendered ${appRenderIndex}`);
 
@@ -12,7 +13,11 @@ function App() {
       <button onClick={() => setAppRenderIndex((prev) => prev + 1)}>
         Re-render app
       </button>
-      <ChildComponent />
+      <button onClick={() => setChildText((prev) => prev + '!')}>
+        Change child text
+      </button>
+      <br />
+      <ChildComponent text={childText} />
     </div>
   );
 }
