@@ -1,11 +1,7 @@
-import { FC } from 'react';
+import { useState } from 'react';
 
-interface Props {
-  params: { text: string };
-  onClick: () => void;
-}
-
-const ChildComponent: FC<Props> = ({ params }) => {
+const ChildComponent = () => {
+  const [text, setText] = useState('Child component');
   console.log('Child re-rendered');
 
   let sum = 0;
@@ -16,7 +12,11 @@ const ChildComponent: FC<Props> = ({ params }) => {
 
   return (
     <div>
-      {params.text} - {sum}
+      <button onClick={() => setText((prev) => prev + '!')}>
+        Change child text
+      </button>
+      <br />
+      {text} - {sum}
     </div>
   );
 };
