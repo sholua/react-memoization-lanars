@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
 interface Props {
   params: { text: string };
@@ -7,7 +7,18 @@ interface Props {
 
 const ChildComponent: FC<Props> = ({ params }) => {
   console.log('Child re-rendered');
-  return <div>{params.text}</div>;
+
+  let sum = 0;
+
+  for (let i = 1; i <= 1000000000; i++) {
+    sum += i;
+  }
+
+  return (
+    <div>
+      {params.text} - {sum}
+    </div>
+  );
 };
 
-export default memo(ChildComponent);
+export default ChildComponent;
