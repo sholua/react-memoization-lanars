@@ -1,16 +1,13 @@
 import './App.css';
-import ButtonWithModal from './components/ButtonWithModal';
-import ChildComponent from './components/ChildComponent';
 
 import ParentComponent from './components/ParentComponent';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
 
 function App() {
   return (
     <div>
-      <ParentComponent>
-        <ChildComponent />
-        <ButtonWithModal />
-      </ParentComponent>
+      <ParentComponent sidebar={<Sidebar />} content={<MainContent />} />
     </div>
   );
 }
