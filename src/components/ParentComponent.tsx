@@ -1,24 +1,23 @@
-import { useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 
-import ButtonWithModal from './ButtonWithModal';
-import ChildComponent from './ChildComponent';
+interface Props {
+  children: ReactNode;
+}
 
-function ParentComponent() {
+const ParentComponent: FC<Props> = ({ children }) => {
   const [parentRenderIndex, setParentRenderIndex] = useState(0);
 
   console.log(`Parent rendered ${parentRenderIndex}`);
 
   return (
-    <div>
+    <div className="App">
       <button onClick={() => setParentRenderIndex((prev) => prev + 1)}>
         Re-render app
       </button>
 
-      <ChildComponent />
-
-      <ButtonWithModal />
+      {children}
     </div>
   );
-}
+};
 
 export default ParentComponent;

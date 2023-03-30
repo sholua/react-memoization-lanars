@@ -1,11 +1,16 @@
 import './App.css';
+import ButtonWithModal from './components/ButtonWithModal';
+import ChildComponent from './components/ChildComponent';
 
 import ParentComponent from './components/ParentComponent';
 
 function App() {
   return (
-    <div className="App">
-      <ParentComponent />
+    <div>
+      <ParentComponent>
+        <ChildComponent />
+        <ButtonWithModal />
+      </ParentComponent>
     </div>
   );
 }
